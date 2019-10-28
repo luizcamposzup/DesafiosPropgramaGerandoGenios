@@ -20,6 +20,15 @@ class ViewController: UIViewController {
             return
         }
         
+        if validateJson(s: textJson) == true {
+                let alert = UIAlertController(title: "Resposta", message: "JSON válido!", preferredStyle: .alert)
+                let ok = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alert.addAction(ok)
+        } else {
+            let alert = UIAlertController(title: "Resposta", message: "NÃO é um JSON válido!", preferredStyle: .alert)
+                let ok = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alert.addAction(ok)
+        }
         
         
     }
