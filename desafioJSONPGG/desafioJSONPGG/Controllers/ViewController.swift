@@ -20,16 +20,20 @@ class ViewController: UIViewController {
             return
         }
         
-        if validateJson(s: textJson) == true {
+        if (validateJson(stringJson: textJson)) {
                 let alert = UIAlertController(title: "Resposta", message: "JSON válido!", preferredStyle: .alert)
                 let ok = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alert.addAction(ok)
+            self.present(alert, animated: true, completion: nil)
+            print("valido")
         } else {
             let alert = UIAlertController(title: "Resposta", message: "NÃO é um JSON válido!", preferredStyle: .alert)
                 let ok = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alert.addAction(ok)
+            self.present(alert, animated: true, completion: nil)
+            print("invalido")
         }
-        
+        jsonTextField?.text = ""
         
     }
     
@@ -40,27 +44,34 @@ class ViewController: UIViewController {
     let stringCategoryColchete = "[]"
     let stringCategoryChave = "{}"
 
-    func validateJson(s: String) -> Bool{
+    func validateJson(stringJson: String) -> Bool{
         
         print("stringJsonOriginal: ",stringJson)
         
-        stringJson = replaceCharacter(stringJson, "\\", "")
-        stringJson = replaceCharacter(stringJson, " ", "")
+        self.stringJson = replaceCharacter(stringJson, "\\", "")
+        self.stringJson = replaceCharacter(stringJson, " ", "")
         print("stringJsonSemBarrasEEspaços: ",stringJson)
         
         array = convertStringToArray(s: stringJson)
-        
-        if(processArray(a: array) && stack.count == 0){
-            return true
-        }
-        else{
+       
+        if (array.count > 0) {
+            if(processArray(a: array) && stack.count == 0){
+                return true
+            }
+            else{
+                return false
+            }
+            
+        } else {
             return false
         }
+        
     
     }
 
     func convertStringToArray(s: String) -> Array<Character>{
         return Array(s)
+        
     }
 
     func processArray(a: Array<Character>) -> Bool{
@@ -72,7 +83,6 @@ class ViewController: UIViewController {
                 break
             }
         }
-        
         return result
     }
 
@@ -83,12 +93,12 @@ class ViewController: UIViewController {
         if(verifyIfIsValidElement(s: s)){
             result = processElementValid(s: s, a: a)
         }
-        
         return result
     }
 
     func verifyIfIsValidElement(s: String) -> Bool{
         return stringElementvalids.contains(s)
+        
     }
 
     func processElementValid(s:String, a: Array<String>) -> Bool{
@@ -100,7 +110,6 @@ class ViewController: UIViewController {
         else {
             result = processElementClose(s: s, a: a)
         }
-        
         return result
     }
 
@@ -112,7 +121,6 @@ class ViewController: UIViewController {
             else{stack = pushStack(s: s, a: a)}
         }
         else{stack = pushStack(s: s, a: a)}
-        
         return result
     }
 
@@ -127,7 +135,6 @@ class ViewController: UIViewController {
             result = verifyElementCloseWhenStackIsNotEmpty(s: s, a: a)
             
         }
-        
         return result
     }
 
@@ -146,7 +153,6 @@ class ViewController: UIViewController {
         else{
             result = false
         }
-        
         return result
 
     }
@@ -184,7 +190,6 @@ class ViewController: UIViewController {
             elementIsCategoryChave(s: element)){
             result = true
         }
-        
         return result
     }
 
@@ -215,7 +220,6 @@ class ViewController: UIViewController {
     }
 
     func replaceCharacter(_ stringOriginal: String, _ of: String, _ with: String ) -> String{
-        
         return stringOriginal.replacingOccurrences(of: of, with: "", options: NSString.CompareOptions.literal, range: nil)
     }
 
