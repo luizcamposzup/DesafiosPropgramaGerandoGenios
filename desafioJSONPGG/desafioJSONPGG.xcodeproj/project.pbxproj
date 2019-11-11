@@ -26,7 +26,6 @@
 		42D7438F23670AD400A9A020 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		42D7439223670AD400A9A020 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		42D7439423670AD400A9A020 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		42D743A223674B6F00A9A020 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		42D7469B2368563700C15246 /* logo zup.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "logo zup.jpeg"; sourceTree = "<group>"; };
 		42D7469D2368576400C15246 /* zup branco.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "zup branco.png"; path = "../../../../Downloads/zup branco.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,7 +71,6 @@
 				42D7469B2368563700C15246 /* logo zup.jpeg */,
 				42D7439123670AD400A9A020 /* LaunchScreen.storyboard */,
 				42D7439423670AD400A9A020 /* Info.plist */,
-				42D743A223674B6F00A9A020 /* MyPlayground.playground */,
 			);
 			path = desafioJSONPGG;
 			sourceTree = "<group>";
