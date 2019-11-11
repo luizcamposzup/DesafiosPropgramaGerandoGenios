@@ -169,7 +169,8 @@ class ViewController: UIViewController {
     }
 
 // MARK: - IBOutlets
-    @IBOutlet weak var jsonTextField: UITextField?
+    @IBOutlet weak var jsonTextField: UITextView!
+    
     
 // MARK: - IBActions
     @IBAction func validate(_ sender: Any) {
