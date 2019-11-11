@@ -2,9 +2,8 @@
 //  ViewController.swift
 //  desafioJSONPGG
 //
-//  Created by zupper on 28/10/19.
+//  Created by Luizhcarminati on 28/10/19.
 //  Copyright © 2019 zupper. All rights reserved.
-//
 
 import UIKit
 
@@ -32,7 +31,6 @@ class ViewController: UIViewController {
                 return true
             }
             else{ return false }
-            
         } else { return false }
     }
 
@@ -65,9 +63,7 @@ class ViewController: UIViewController {
         if(verifyIsOpenElement(s: s)){
             return processElementOpen(s: s, a: a)
         }
-        else {
-            return processElementClose(s: s, a: a)
-        }
+        else { return processElementClose(s: s, a: a) }
     }
 
     func processElementOpen(s: String, a: Array<String>) -> Bool{
@@ -84,9 +80,7 @@ class ViewController: UIViewController {
             print("Inválido por pilha vazia. Símbolo: ", s)
             return false
                     }
-        else{
-            return verifyElementCloseWhenStackIsNotEmpty(s: s, a: a)
-        }
+        else{ return verifyElementCloseWhenStackIsNotEmpty(s: s, a: a) }
     }
 
     func verifyElementCloseWhenStackIsNotEmpty(s: String, a: Array<String>) -> Bool{
@@ -98,12 +92,8 @@ class ViewController: UIViewController {
                 print("Inválido por símbolo não inverso no topo. Símbolo: ", s)
                 return false
             }
-        }
-        else{
-            return false
-        }
+        } else{ return false }
         return true
-
     }
 
     func verifyIsOpenElement(s: String) -> Bool{
@@ -134,7 +124,7 @@ class ViewController: UIViewController {
     }
 
     func elementIsCategoryColchete(s: String)-> Bool{
-return stringCategoryColchete.contains(s)
+        return stringCategoryColchete.contains(s)
     }
 
     func elementIsCategoryChave(s: String)-> Bool{
@@ -160,12 +150,10 @@ return stringCategoryColchete.contains(s)
         return stringOriginal.replacingOccurrences(of: of, with: "", options: NSString.CompareOptions.literal, range: nil)
     }
 
-    //TOP STACK
     func topStack(a: Array<String>) -> String{
         return a[a.count-1]
     }
 
-    //PUSH STACK
     func pushStack(s: String, a: Array<String>) -> Array<String>{
         var stack = a
         stack.append((s))
@@ -173,15 +161,13 @@ return stringCategoryColchete.contains(s)
         return stack
     }
 
-    //POP STACK
     func popStack(a: Array<String>) -> Array<String>{
         var stack = a
         print("Removido da pilha: ", stack[stack.count-1])
         stack.remove(at: stack.count-1)
         return stack
     }
-    
-    
+
 // MARK: - IBOutlets
     @IBOutlet weak var jsonTextField: UITextField?
     
