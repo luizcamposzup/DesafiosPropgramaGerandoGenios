@@ -176,14 +176,15 @@ class ViewController: UIViewController {
     @IBAction func validate(_ sender: Any) {
 
         guard let textJson = jsonTextField?.text else { return }
-        let alert = UIAlertController(title: "Resposta", message: "JSON válido!", preferredStyle: .alert)
+            var message = ""
             if (validateJson(stringJson: textJson)) {
-                let ok = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                alert.addAction(ok)
+                message = "JSON VÁLIDO!"
             } else {
-                let ok = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                alert.addAction(ok)
+                message = "NÃO É UM JSON VÁLIDO!"
             }
+        let alert = UIAlertController(title: "RESPOSTA", message: message, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(ok)
         self.present(alert, animated: true, completion: nil)
         jsonTextField?.text = ""
     }
