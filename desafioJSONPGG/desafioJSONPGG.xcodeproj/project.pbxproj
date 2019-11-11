@@ -17,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		420D277A23798C9E0093F17E /* zup branco.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zup branco.png"; sourceTree = "<group>"; };
 		42D7438323670AD200A9A020 /* desafioJSONPGG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = desafioJSONPGG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42D7438623670AD200A9A020 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42D7438823670AD200A9A020 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +68,8 @@
 				42D743A423674DFD00A9A020 /* Controllers */,
 				42D7469A2368562900C15246 /* Image */,
 				42D7438F23670AD400A9A020 /* Assets.xcassets */,
+				420D277A23798C9E0093F17E /* zup branco.png */,
+				42D7469B2368563700C15246 /* logo zup.jpeg */,
 				42D7439123670AD400A9A020 /* LaunchScreen.storyboard */,
 				42D7439423670AD400A9A020 /* Info.plist */,
 				42D743A223674B6F00A9A020 /* MyPlayground.playground */,
@@ -101,7 +104,6 @@
 			isa = PBXGroup;
 			children = (
 				42D7469D2368576400C15246 /* zup branco.png */,
-				42D7469B2368563700C15246 /* logo zup.jpeg */,
 			);
 			path = Image;
 			sourceTree = "<group>";

@@ -10,191 +10,131 @@ import UIKit
 
 class ViewController: UIViewController {
 
-   
-    @IBOutlet weak var jsonTextField: UITextField?
-    
-
-    @IBAction func validate(_ sender: Any) {
-
-        guard let textJson = jsonTextField?.text else {
-            return
-        }
-        
-        if (validateJson(stringJson: textJson)) {
-                let alert = UIAlertController(title: "Resposta", message: "JSON válido!", preferredStyle: .alert)
-                let ok = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alert.addAction(ok)
-            self.present(alert, animated: true, completion: nil)
-            print("valido")
-        } else {
-            let alert = UIAlertController(title: "Resposta", message: "NÃO é um JSON válido!", preferredStyle: .alert)
-                let ok = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alert.addAction(ok)
-            self.present(alert, animated: true, completion: nil)
-            print("invalido")
-        }
-        jsonTextField?.text = ""
-        
-    }
-    
+// MARK: - Variables
     var stringJson: String = ""
     var array = [Character]()
     var stack = [String]()
     let stringElementvalids = "[{}]"
     let stringCategoryColchete = "[]"
     let stringCategoryChave = "{}"
-
+    
+// MARK: - Functions
     func validateJson(stringJson: String) -> Bool{
         
         print("stringJsonOriginal: ",stringJson)
-        
         self.stringJson = replaceCharacter(stringJson, "\\", "")
         self.stringJson = replaceCharacter(stringJson, " ", "")
         print("stringJsonSemBarrasEEspaços: ",stringJson)
         
         array = convertStringToArray(s: stringJson)
-       
         if (array.count > 0) {
             if(processArray(a: array) && stack.count == 0){
                 return true
             }
-            else{
-                return false
-            }
+            else{ return false }
             
-        } else {
-            return false
-        }
-        
-    
+        } else { return false }
     }
 
     func convertStringToArray(s: String) -> Array<Character>{
         return Array(s)
-        
     }
 
     func processArray(a: Array<Character>) -> Bool{
-        var result = true
         for i in 0...a.count-1{
             let valueArray = String(a[i])
             if(!processValueArray(s: valueArray, a: stack)){
-                result = false
-                break
+                return false
             }
         }
-        return result
+        return true
     }
 
     func processValueArray(s: String, a: Array<String>) -> Bool{
-        
-        var result = true
-        
         if(verifyIfIsValidElement(s: s)){
-            result = processElementValid(s: s, a: a)
+            return processElementValid(s: s, a: a)
         }
-        return result
+        return true
     }
 
     func verifyIfIsValidElement(s: String) -> Bool{
         return stringElementvalids.contains(s)
-        
     }
 
     func processElementValid(s:String, a: Array<String>) -> Bool{
-        var result = true
-        
         if(verifyIsOpenElement(s: s)){
-            result = processElementOpen(s: s, a: a)
+            return processElementOpen(s: s, a: a)
         }
         else {
-            result = processElementClose(s: s, a: a)
+            return processElementClose(s: s, a: a)
         }
-        return result
     }
 
     func processElementOpen(s: String, a: Array<String>) -> Bool{
-        var result = true
-        
         if(!verifyIfStackIsEmpty(a: a)){
-            if(verifyIfElementIsSameCategoryFromTop(s: s, a: a)){result = false}
-            else{stack = pushStack(s: s, a: a)}
+            if(verifyIfElementIsSameCategoryFromTop(s: s, a: a)){ return false }
+            else {stack = pushStack(s: s, a: a)}
         }
-        else{stack = pushStack(s: s, a: a)}
-        return result
+        else {stack = pushStack(s: s, a: a)}
+        return true
     }
 
     func processElementClose(s: String, a: Array<String>) -> Bool{
-        var result = true
-        
         if(verifyIfStackIsEmpty(a: a)){
-            result = false
             print("Inválido por pilha vazia. Símbolo: ", s)
-        }
+            return false
+                    }
         else{
-            result = verifyElementCloseWhenStackIsNotEmpty(s: s, a: a)
-            
+            return verifyElementCloseWhenStackIsNotEmpty(s: s, a: a)
         }
-        return result
     }
 
     func verifyElementCloseWhenStackIsNotEmpty(s: String, a: Array<String>) -> Bool{
-        var result = true
-        
         if (verifyIfElementIsSameCategoryFromTop(s: s, a: a)){
             if(verifyIfElementIsInverseFromTop(s: s, a: a)){
                 stack = popStack(a: a)
             }
             else{
-                result = false
                 print("Inválido por símbolo não inverso no topo. Símbolo: ", s)
+                return false
             }
         }
         else{
-            result = false
+            return false
         }
-        return result
+        return true
 
     }
 
     func verifyIsOpenElement(s: String) -> Bool{
-        
-        var result = false
-        
         switch s {
         case "[":
-            result = true
+            return true
         case "{":
-            result = true
+            return true
             
         default:
-            result = false
+            return false
         }
-        return result
     }
 
-    func verifyIfStackIsEmpty(a: Array<String>) -> Bool{
-        return a.isEmpty
-    }
+    func verifyIfStackIsEmpty(a: Array<String>) -> Bool{ return a.isEmpty }
 
     func verifyIfElementIsSameCategoryFromTop(s: String, a: Array<String>)->Bool{
-        var result = false
-        
         let element = topStack(a: a)
-
         if(elementIsCategoryColchete(s: s) &&
             elementIsCategoryColchete(s: element)){
-            result = true
+            return true
         }
         else if (elementIsCategoryChave(s: s) &&
             elementIsCategoryChave(s: element)){
-            result = true
+            return true
         }
-        return result
+        return false
     }
 
     func elementIsCategoryColchete(s: String)-> Bool{
-        return stringCategoryColchete.contains(s)
+return stringCategoryColchete.contains(s)
     }
 
     func elementIsCategoryChave(s: String)-> Bool{
@@ -202,21 +142,18 @@ class ViewController: UIViewController {
     }
 
     func verifyIfElementIsInverseFromTop(s: String, a: Array<String>) -> Bool{
-        var result = false
-        
         switch s {
         case "[":
-            result = topStack(a: a).contains("]")
+            return topStack(a: a).contains("]")
         case "]":
-            result = topStack(a: a).contains("[")
+            return topStack(a: a).contains("[")
         case "{":
-            result = topStack(a: a).contains("}")
+            return topStack(a: a).contains("}")
         case "}":
-            result = topStack(a: a).contains("{")
+            return topStack(a: a).contains("{")
         default:
-            result = false
+            return false
         }
-        return result
     }
 
     func replaceCharacter(_ stringOriginal: String, _ of: String, _ with: String ) -> String{
@@ -243,6 +180,24 @@ class ViewController: UIViewController {
         stack.remove(at: stack.count-1)
         return stack
     }
+    
+    
+// MARK: - IBOutlets
+    @IBOutlet weak var jsonTextField: UITextField?
+    
+// MARK: - IBActions
+    @IBAction func validate(_ sender: Any) {
 
+        guard let textJson = jsonTextField?.text else { return }
+        let alert = UIAlertController(title: "Resposta", message: "JSON válido!", preferredStyle: .alert)
+            if (validateJson(stringJson: textJson)) {
+                let ok = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                alert.addAction(ok)
+            } else {
+                let ok = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                alert.addAction(ok)
+            }
+        self.present(alert, animated: true, completion: nil)
+        jsonTextField?.text = ""
+    }
 }
-
