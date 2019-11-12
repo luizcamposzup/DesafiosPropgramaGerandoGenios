@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4295AFE6237B2D1800257798 /* logo zup branco.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 4295AFE5237B2D1800257798 /* logo zup branco.jpeg */; };
 		42D7438723670AD200A9A020 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D7438623670AD200A9A020 /* AppDelegate.swift */; };
 		42D7438923670AD200A9A020 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D7438823670AD200A9A020 /* SceneDelegate.swift */; };
 		42D7438B23670AD200A9A020 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D7438A23670AD200A9A020 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4295AFE5237B2D1800257798 /* logo zup branco.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "logo zup branco.jpeg"; path = "../../../Downloads/logo zup branco.jpeg"; sourceTree = "<group>"; };
 		42D7438323670AD200A9A020 /* desafioJSONPGG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = desafioJSONPGG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42D7438623670AD200A9A020 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42D7438823670AD200A9A020 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				42D743A523674E0B00A9A020 /* Views */,
 				42D743A423674DFD00A9A020 /* Controllers */,
 				42D7438F23670AD400A9A020 /* Assets.xcassets */,
+				4295AFE5237B2D1800257798 /* logo zup branco.jpeg */,
 				42D7469B2368563700C15246 /* logo zup.jpeg */,
 				42D7439123670AD400A9A020 /* LaunchScreen.storyboard */,
 				42D7439423670AD400A9A020 /* Info.plist */,
@@ -152,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42D7439323670AD400A9A020 /* LaunchScreen.storyboard in Resources */,
+				4295AFE6237B2D1800257798 /* logo zup branco.jpeg in Resources */,
 				42D7439023670AD400A9A020 /* Assets.xcassets in Resources */,
 				42D7438E23670AD200A9A020 /* Main.storyboard in Resources */,
 			);
