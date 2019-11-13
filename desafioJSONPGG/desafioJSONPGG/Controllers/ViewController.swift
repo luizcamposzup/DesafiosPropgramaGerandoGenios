@@ -16,26 +16,20 @@ class ViewController: UIViewController {
     let stringElementvalids = "[{}]"
     let stringCategoryColchete = "[]"
     let stringCategoryChave = "{}"
+    @IBOutlet weak var jsonTextField: UITextView!
     
 // MARK: - Functions
     func validateJson(stringJson: String) -> Bool{
         
         print("stringJsonOriginal: ",stringJson)
-        self.stringJson = replaceCharacter(stringJson, "\\", "")
-        self.stringJson = replaceCharacter(stringJson, " ", "")
+        self.stringJson = stringJson.replacingOccurrences(of: "\\", with: "").replacingOccurrences(of: " ", with: "")
         print("stringJsonSemBarrasEEspaços: ",stringJson)
         
-        array = convertStringToArray(s: stringJson)
-        if (array.count > 0) {
-            if(processArray(a: array) && stack.count == 0){
+        array = Array(stringJson)
+        if (array.count > 0), (processArray(a: array) && stack.count == 0){
                 return true
             }
-            else{ return false }
-        } else { return false }
-    }
-
-    func convertStringToArray(s: String) -> Array<Character>{
-        return Array(s)
+        return false
     }
 
     func processArray(a: Array<Character>) -> Bool{
@@ -49,49 +43,37 @@ class ViewController: UIViewController {
     }
 
     func processValueArray(s: String, a: Array<String>) -> Bool{
-        if(verifyIfIsValidElement(s: s)){
+        if stringElementvalids.contains(s) {
             return processElementValid(s: s, a: a)
         }
         return true
     }
 
-    func verifyIfIsValidElement(s: String) -> Bool{
-        return stringElementvalids.contains(s)
-    }
-
     func processElementValid(s:String, a: Array<String>) -> Bool{
-        if(verifyIsOpenElement(s: s)){
+        if verifyIsOpenElement(s: s) {
             return processElementOpen(s: s, a: a)
         }
-        else { return processElementClose(s: s, a: a) }
+        return processElementClose(s: s, a: a)
     }
 
     func processElementOpen(s: String, a: Array<String>) -> Bool{
-        if(!verifyIfStackIsEmpty(a: a)){
-            if(verifyIfElementIsSameCategoryFromTop(s: s, a: a)){ return false }
-            else {stack = pushStack(s: s, a: a)}
+        if(!a.isEmpty), (verifyIfElementIsSameCategoryFromTop(s: s, a: a)) { return false
         }
-        else {stack = pushStack(s: s, a: a)}
+        stack = pushStack(s: s, a: a)
         return true
     }
 
     func processElementClose(s: String, a: Array<String>) -> Bool{
-        if(verifyIfStackIsEmpty(a: a)){
+        if(a.isEmpty){
             print("Inválido por pilha vazia. Símbolo: ", s)
             return false
-                    }
+        }
         else{ return verifyElementCloseWhenStackIsNotEmpty(s: s, a: a) }
     }
 
     func verifyElementCloseWhenStackIsNotEmpty(s: String, a: Array<String>) -> Bool{
-        if (verifyIfElementIsSameCategoryFromTop(s: s, a: a)){
-            if(verifyIfElementIsInverseFromTop(s: s, a: a)){
+        if (verifyIfElementIsSameCategoryFromTop(s: s, a: a)), (verifyIfElementIsInverseFromTop(s: s, a: a)) {
                 stack = popStack(a: a)
-            }
-            else{
-                print("Inválido por símbolo não inverso no topo. Símbolo: ", s)
-                return false
-            }
         } else{ return false }
         return true
     }
@@ -102,33 +84,17 @@ class ViewController: UIViewController {
             return true
         case "{":
             return true
-            
         default:
             return false
         }
     }
 
-    func verifyIfStackIsEmpty(a: Array<String>) -> Bool{ return a.isEmpty }
-
     func verifyIfElementIsSameCategoryFromTop(s: String, a: Array<String>)->Bool{
         let element = topStack(a: a)
-        if(elementIsCategoryColchete(s: s) &&
-            elementIsCategoryColchete(s: element)){
-            return true
-        }
-        else if (elementIsCategoryChave(s: s) &&
-            elementIsCategoryChave(s: element)){
+        if (stringCategoryColchete.contains(s) && stringCategoryColchete.contains(element)) || stringCategoryChave.contains(s) && stringCategoryChave.contains(element) {
             return true
         }
         return false
-    }
-
-    func elementIsCategoryColchete(s: String)-> Bool{
-        return stringCategoryColchete.contains(s)
-    }
-
-    func elementIsCategoryChave(s: String)-> Bool{
-        return stringCategoryChave.contains(s)
     }
 
     func verifyIfElementIsInverseFromTop(s: String, a: Array<String>) -> Bool{
@@ -144,10 +110,6 @@ class ViewController: UIViewController {
         default:
             return false
         }
-    }
-
-    func replaceCharacter(_ stringOriginal: String, _ of: String, _ with: String ) -> String{
-        return stringOriginal.replacingOccurrences(of: of, with: "", options: NSString.CompareOptions.literal, range: nil)
     }
 
     func topStack(a: Array<String>) -> String{
@@ -167,21 +129,12 @@ class ViewController: UIViewController {
         stack.remove(at: stack.count-1)
         return stack
     }
-
-// MARK: - IBOutlets
-    @IBOutlet weak var jsonTextField: UITextView!
-    
     
 // MARK: - IBActions
     @IBAction func validate(_ sender: Any) {
 
         guard let textJson = jsonTextField?.text else { return }
-            var message = ""
-            if (validateJson(stringJson: textJson)) {
-                message = "JSON VÁLIDO!"
-            } else {
-                message = "NÃO É UM JSON VÁLIDO!"
-            }
+        let message = validateJson(stringJson: textJson) == true ? "JSON VÁLIDO!" : "NÃO É UM JSON VÁLIDO!"
         let alert = UIAlertController(title: "RESPOSTA", message: message, preferredStyle: .alert)
         let ok = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alert.addAction(ok)
