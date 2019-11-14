@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		420CF7C7237C5258007A2240 /* ButtonClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420CF7C6237C5258007A2240 /* ButtonClass.swift */; };
 		42D746AC236885F400C15246 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D746AB236885F400C15246 /* AppDelegate.swift */; };
 		42D746AE236885F400C15246 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D746AD236885F400C15246 /* SceneDelegate.swift */; };
 		42D746B0236885F400C15246 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D746AF236885F400C15246 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		420CF7C6237C5258007A2240 /* ButtonClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonClass.swift; sourceTree = "<group>"; };
 		42D746A8236885F400C15246 /* DesafioFibonacciFatorialPGG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesafioFibonacciFatorialPGG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42D746AB236885F400C15246 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42D746AD236885F400C15246 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,7 +28,7 @@
 		42D746B7236885F600C15246 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		42D746B9236885F600C15246 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42D746BF2368861500C15246 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		42D746C323689F5600C15246 /* logo zup.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "logo zup.jpeg"; path = "../../../../../Downloads/logo zup.jpeg"; sourceTree = "<group>"; };
+		42D746C323689F5600C15246 /* logo zup.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "logo zup.jpeg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,23 +63,16 @@
 			children = (
 				42D746C623689F7300C15246 /* Controllers */,
 				42D746C523689F6100C15246 /* Views */,
-				42D746C023689EDF00C15246 /* Image */,
 				42D746AB236885F400C15246 /* AppDelegate.swift */,
+				420CF7C6237C5258007A2240 /* ButtonClass.swift */,
 				42D746AD236885F400C15246 /* SceneDelegate.swift */,
 				42D746B4236885F600C15246 /* Assets.xcassets */,
+				42D746C323689F5600C15246 /* logo zup.jpeg */,
 				42D746B6236885F600C15246 /* LaunchScreen.storyboard */,
 				42D746B9236885F600C15246 /* Info.plist */,
 				42D746BF2368861500C15246 /* MyPlayground.playground */,
 			);
 			path = DesafioFibonacciFatorialPGG;
-			sourceTree = "<group>";
-		};
-		42D746C023689EDF00C15246 /* Image */ = {
-			isa = PBXGroup;
-			children = (
-				42D746C323689F5600C15246 /* logo zup.jpeg */,
-			);
-			path = Image;
 			sourceTree = "<group>";
 		};
 		42D746C523689F6100C15246 /* Views */ = {
@@ -170,6 +165,7 @@
 			files = (
 				42D746B0236885F400C15246 /* ViewController.swift in Sources */,
 				42D746AC236885F400C15246 /* AppDelegate.swift in Sources */,
+				420CF7C7237C5258007A2240 /* ButtonClass.swift in Sources */,
 				42D746AE236885F400C15246 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
