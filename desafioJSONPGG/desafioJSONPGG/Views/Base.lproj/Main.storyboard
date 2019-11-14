@@ -15,18 +15,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Insira o JSON a ser validado" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NZd-hh-Yvz">
-                                <rect key="frame" x="50" y="150" width="214" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Insira o JSON a ser validado" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NZd-hh-Yvz">
+                                <rect key="frame" x="54" y="157" width="214" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ss-1w-D2b">
-                                <rect key="frame" x="50" y="319" width="314" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7Ss-1w-D2b">
+                                <rect key="frame" x="112" y="510" width="191" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.67094951869999997" green="0.75497943160000003" blue="0.31752943989999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="5Rf-kk-z7i"/>
-                                </constraints>
                                 <state key="normal" title="Validar">
                                     <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
@@ -39,76 +38,48 @@
                                     <action selector="validate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g1X-K8-MhH"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{                                   }" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sru-Lc-FYH">
-                                <rect key="frame" x="82" y="64" width="0.0" height="29"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="zOe-Jm-mIC"/>
-                                </constraints>
-                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" red="0.8067615628" green="0.37947991489999999" blue="0.2116870284" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Validador de JSON" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y4T-dI-hLd">
-                                <rect key="frame" x="102" y="64" width="0.0" height="24"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- POD No Limits -" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="sUG-er-qWI">
-                                <rect key="frame" x="279.66666666666669" y="825" width="114.33333333333331" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.67094951869999997" green="0.75497943160000003" blue="0.31752943989999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nrU-De-HZu">
-                                <rect key="frame" x="40" y="186" width="334" height="200"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="h4u-xW-VU5"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo zup branco.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="taa-nC-8S0">
-                                <rect key="frame" x="30" y="750" width="150" height="92"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="L7b-OG-xNA"/>
-                                </constraints>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo zup branco.png" translatesAutoresizingMaskIntoConstraints="NO" id="su8-yO-3Au">
+                                <rect key="frame" x="29" y="730" width="176" height="124"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="i9f-3A-dDh">
-                                <rect key="frame" x="208.33333333333337" y="767.33333333333337" width="165.66666666666663" height="52.666666666666629"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="i9f-3A-dDh">
+                                <rect key="frame" x="213" y="765" width="181" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <string key="text">Programa
 Gerando Gênios</string>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{                                   }" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Sru-Lc-FYH">
+                                <rect key="frame" x="83" y="54" width="249" height="36"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="0.8067615628" green="0.37947991489999999" blue="0.2116870284" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Validador de JSON" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="y4T-dI-hLd">
+                                <rect key="frame" x="103" y="57" width="210" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- POD No Limits -" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sUG-er-qWI">
+                                <rect key="frame" x="267" y="820" width="115" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.67094951869999997" green="0.75497943160000003" blue="0.31752943989999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nrU-De-HZu">
+                                <rect key="frame" x="41" y="201" width="341" height="289"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.019112614909999999" green="0.2129425704" blue="0.31374007459999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <constraints>
-                            <constraint firstItem="nrU-De-HZu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="3eH-Xm-MSb"/>
-                            <constraint firstItem="y4T-dI-hLd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4Wr-go-T5J"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="7Ss-1w-D2b" secondAttribute="trailing" constant="30" id="AIO-dI-dUX"/>
-                            <constraint firstItem="7Ss-1w-D2b" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="Dm2-OD-lmo"/>
-                            <constraint firstItem="7Ss-1w-D2b" firstAttribute="top" secondItem="nrU-De-HZu" secondAttribute="bottom" constant="15" id="DuT-U6-1Xx"/>
-                            <constraint firstItem="Sru-Lc-FYH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="GGX-YZ-iq3"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="NZd-hh-Yvz" secondAttribute="trailing" symbolic="YES" id="MiU-xg-dew"/>
-                            <constraint firstAttribute="trailing" secondItem="sUG-er-qWI" secondAttribute="trailing" constant="20" id="Nz6-qD-kvK"/>
-                            <constraint firstItem="NZd-hh-Yvz" firstAttribute="top" secondItem="Sru-Lc-FYH" secondAttribute="bottom" constant="50" id="S21-r1-pIf"/>
-                            <constraint firstItem="taa-nC-8S0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="30" id="UlX-mi-Ovu"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="i9f-3A-dDh" secondAttribute="trailing" constant="20" id="WuX-q2-8u7"/>
-                            <constraint firstItem="i9f-3A-dDh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="taa-nC-8S0" secondAttribute="trailing" constant="5" id="YKz-k1-wTj"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="nrU-De-HZu" secondAttribute="trailing" constant="20" id="Yv7-b8-4Mb"/>
-                            <constraint firstItem="sUG-er-qWI" firstAttribute="top" secondItem="i9f-3A-dDh" secondAttribute="bottom" constant="4.9999999999998863" id="cG2-E6-b9X"/>
-                            <constraint firstItem="NZd-hh-Yvz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="imJ-Ly-Sm5"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="taa-nC-8S0" secondAttribute="bottom" constant="20" id="mgS-bJ-guJ"/>
-                            <constraint firstItem="Sru-Lc-FYH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="whR-bG-oRp"/>
-                            <constraint firstItem="sUG-er-qWI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="taa-nC-8S0" secondAttribute="trailing" constant="8" symbolic="YES" id="xMD-lP-ore"/>
-                            <constraint firstItem="nrU-De-HZu" firstAttribute="top" secondItem="NZd-hh-Yvz" secondAttribute="bottom" constant="15" id="yZP-r4-xAJ"/>
-                            <constraint firstItem="y4T-dI-hLd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="ybI-jE-UsT"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="sUG-er-qWI" secondAttribute="bottom" constant="20" id="z24-Qb-1Yg"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
@@ -121,6 +92,6 @@ Gerando Gênios</string>
         </scene>
     </scenes>
     <resources>
-        <image name="logo zup branco.jpeg" width="157" height="92"/>
+        <image name="logo zup branco.png" width="157" height="92"/>
     </resources>
 </document>
