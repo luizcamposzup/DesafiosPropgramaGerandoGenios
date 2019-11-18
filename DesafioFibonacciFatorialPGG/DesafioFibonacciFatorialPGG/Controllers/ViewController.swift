@@ -18,27 +18,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
          
-        //Initialize the mutable string
-        myMutableString = NSMutableAttributedString(
-            string: myString,
-            attributes: [NSAttributedString.Key.font:
-                UIFont(name: "Hiragino Sans W6", size: 25.0)!])
-         
-        //Add more attributes here:
-        myMutableString.addAttribute(NSAttributedString.Key.foregroundColor,
-            value: UIColor.green,
-            range: NSRange(
-                location:17,
-                length:11))
-        myMutableString.addAttribute(NSAttributedString.Key.strokeColor,
-            value: UIColor.blue,
-            range:  NSRange(
-                location: 0,
-                length: 16))
-        
-
-        //Apply to the label
-        textLabel.attributedText = myMutableString
+        chanceTextColor()
     }
 
     @IBOutlet weak var numberTextField: UITextField?
@@ -79,5 +59,23 @@ class ViewController: UIViewController {
             return 1
         } else { return n * factorial(n-1) }
     }
+        
+    func chanceTextColor (){
+            
+        let firstAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named:"azulZup"), NSAttributedString.Key.font: UIFont(name: "Hiragino Sans W6", size: 20)]
+        let secondAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named:"verdeZup"), NSAttributedString.Key.font: UIFont(name: "Hiragino Sans W6", size: 20)]
+        let thirdAttributes = [NSAttributedString.Key.foregroundColor: UIColor.orange, NSAttributedString.Key.font: UIFont(name: "Hiragino Sans W6", size: 40)]
+
+        let firstString = NSMutableAttributedString(string: "{ ", attributes: thirdAttributes as [NSAttributedString.Key : Any])
+        let secondString = NSAttributedString(string: "Calculo Fibonacci ", attributes: secondAttributes as [NSAttributedString.Key : Any])
+        let thirdString = NSMutableAttributedString(string: "e Fatorial ", attributes: firstAttributes as [NSAttributedString.Key : Any])
+        let fourthString = NSAttributedString(string: "}", attributes: thirdAttributes as [NSAttributedString.Key : Any])
+
+        firstString.append(secondString)
+        firstString.append(thirdString)
+        firstString.append(fourthString)
+        
+        textLabel.attributedText = firstString
+        }
 }
 

@@ -22,14 +22,8 @@
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="122" id="XPq-yI-KC3"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{                }" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZGx-Jz-fgJ">
-                                <rect key="frame" x="68.666666666666686" y="79" width="277" height="84"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
-                                <color key="textColor" red="0.8067615628" green="0.37947991489999999" blue="0.2116870284" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pjW-D0-fJt">
-                                <rect key="frame" x="90" y="99" width="234" height="19.333333333333329"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pjW-D0-fJt">
+                                <rect key="frame" x="45" y="99" width="324" height="19.333333333333329"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" red="0.019112614909999999" green="0.2129425704" blue="0.31374007459999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -77,7 +71,6 @@ Gerando Gênios</string>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="ZGx-Jz-fgJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="35" id="0gP-jR-gzI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="HYG-TH-I09" secondAttribute="trailing" constant="45" id="3Wm-hY-bQj"/>
                             <constraint firstItem="HYG-TH-I09" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="45" id="4qD-C4-kCU"/>
                             <constraint firstItem="w9V-Pl-MO1" firstAttribute="top" secondItem="iPc-QB-s7u" secondAttribute="bottom" constant="1" id="53A-JL-KEa"/>
@@ -86,8 +79,7 @@ Gerando Gênios</string>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JlQ-4n-SUl" secondAttribute="bottom" constant="30" id="LzK-Nr-o4M"/>
                             <constraint firstItem="IVX-fN-cWV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NFg-0k-UYQ"/>
                             <constraint firstItem="N4l-C1-G15" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QeR-H0-xSS"/>
-                            <constraint firstItem="pjW-D0-fJt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="70" id="RK1-y0-gRO"/>
-                            <constraint firstItem="ZGx-Jz-fgJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RnP-by-fcA"/>
+                            <constraint firstItem="pjW-D0-fJt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="25" id="RK1-y0-gRO"/>
                             <constraint firstItem="N4l-C1-G15" firstAttribute="top" secondItem="HYG-TH-I09" secondAttribute="bottom" constant="10" id="T8j-E6-4cK"/>
                             <constraint firstAttribute="trailingMargin" secondItem="w9V-Pl-MO1" secondAttribute="trailing" constant="20" id="YDG-i6-HHc"/>
                             <constraint firstItem="pjW-D0-fJt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="55" id="bFc-Lg-5M3"/>
@@ -98,7 +90,7 @@ Gerando Gênios</string>
                             <constraint firstAttribute="trailingMargin" secondItem="N4l-C1-G15" secondAttribute="trailing" constant="45" id="qaQ-4p-0cb"/>
                             <constraint firstItem="JlQ-4n-SUl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="qmx-o4-wkt"/>
                             <constraint firstItem="pjW-D0-fJt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ud6-Rc-WXM"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="pjW-D0-fJt" secondAttribute="trailing" constant="70" id="x5g-eB-gYf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pjW-D0-fJt" secondAttribute="trailing" constant="25" id="x5g-eB-gYf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
